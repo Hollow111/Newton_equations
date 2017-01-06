@@ -10,7 +10,6 @@
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QGraphicsItem>
-
 #include <QPainter>
 #include <QTimer>
 

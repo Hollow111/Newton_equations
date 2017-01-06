@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "particle.h"
 
 #include "QPainter"
 
@@ -17,6 +18,12 @@ MainWindow::MainWindow(QWidget *parent) :
     std::cout << "Please enter the number of particles you want to add: ";
     std::cin >> count_of_particles;
     std::cout << std::endl;
+    Particle *Particles[count_of_particles];
+    for(int i = 0; i < count_of_particles; i++)
+    {
+        Particles[i] = new Particle(qrand(), qrand());
+        scene->addItem(Particles[i]);            //????????????????????????????
+    }
 
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), scene, SLOT(advance()));
